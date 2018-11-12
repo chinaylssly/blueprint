@@ -1,0 +1,36 @@
+{% extends "./base.html" %}
+{% block title %}
+this is category page......
+{% endblock %}
+
+{% block content%}
+<br>
+<div class="panel panel-default">
+
+	<div class="panel-heading">
+		<h4 class="panel-title">
+		CATEGORYS
+		</h4>
+	</div>
+
+	
+
+		{% for category in categorys %}
+		<div class="panel-body" >
+		<a class="text-center" href="{{category}}">{{category}}</a>
+		</div>
+		{% endfor %}
+	
+
+	<div class="panel-footer">
+		<div class="pull-center">
+				
+				<a href="#" class="btn btn-default">TOP</a>
+				
+		</div>
+	</div>
+
+</div>
+
+
+{% endblock %}

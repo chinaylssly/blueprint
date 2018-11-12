@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+{% block title %}首页{% endblock %}
+
+{% block content %}
+
+<div class="panel panel-default">
+	{% if not username %}
+	<div class="panel-body">
+		<h3><a href='/user'><button type="button" class="btn btn-primary btn-lg btn-block">登录</button></a></h3>
+	</div>
+	
+	{% else %}
+	
+	<div class="panel-body">
+		<h3><button type="button" class="btn btn-primary btn-lg btn-block">欢迎回来{{username}}</button></h3>
+	</div>
+	
+	{% endif %}
+	
+	
+</div>
+
+
+
+<div class="panel panel-default">
+	
+	<div class="panel-body">
+		<a href='/books'><button type="button" class="btn btn-primary btn-lg btn-block">小说</button></a></h3>
+	</div>
+</div>
+
+<div class="panel panel-default">
+	
+	<div class="panel-body">
+		<a href='/path'><button type="button" class="btn btn-primary btn-lg btn-block">PATH</button></a></h3>
+	</div>
+</div>
+
+<div class="panel panel-default">
+	
+	<div class="panel-body">
+		<a href='/local'><button type="button" class="btn btn-primary btn-lg btn-block">分类</button></a></h3>
+	</div>
+</div>
+
+
+<div class="panel panel-default">
+	
+	<div class="panel-body">
+		<a href='/image'><button type="button" class="btn btn-primary btn-lg btn-block">图片</button></a></h3>
+	</div>
+</div>
+
+
+<div class="panel panel-default">
+	
+	<div class="panel-body">
+		<a href='/mm'><button type="button" class="btn btn-primary btn-lg btn-block">美图</button></a></h3>
+	</div>
+</div>
+
+
+<div class="panel panel-default">
+	
+	<div class="panel-body">
+		<a href='/music'><button type="button" class="btn btn-primary btn-lg btn-block">音乐</button></a></h3>
+	</div>
+</div>
+
+
+<div class="panel panel-default">
+	
+	<div class="panel-body">
+		<a href='/tags'><button type="button" class="btn btn-primary btn-lg btn-block">标签云</button></a></h3>
+	</div>
+</div>
+
+<div class="panel panel-default">
+	
+	<div class="panel-body">
+		<a href='/search'><button type="button" class="btn btn-primary btn-lg btn-block">搜索</button></a></h3>
+	</div>
+</div>
+
+
+<div class="panel-footer">
+		<div class="pull-center">
+				{% if  username %}
+				<a href="/user/logout" class="btn btn-primary">注销</a>
+				<a href="/user/delete" class="btn btn-primary">删除账号</a>
+				{% endif %}
+		</div>
+	</div>
+
+
+{% endblock %}

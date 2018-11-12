@@ -1,0 +1,37 @@
+{% extends "./base.html" %}
+{% block title %}
+path
+{% endblock %}
+
+{% block content%}
+<br>
+<h3 class="well"><a href="/path/">path</a></h3>
+<div class="panel panel-default">
+
+	<div class="panel-heading">
+		<h4 class="panel-title">
+		{{path}}
+		</h4>
+	</div>
+
+	
+
+		{% for category in categorys %}
+		<div class="panel-body" >
+		<a class="text-center" href="{{path}}/{{category}}/1">{{category}}</a>
+		</div>
+		{% endfor %}
+	
+
+	<div class="panel-footer">
+		<div class="pull-center">
+				
+				<a href="#" class="btn btn-default">TOP</a>
+				
+		</div>
+	</div>
+
+</div>
+
+
+{% endblock %}

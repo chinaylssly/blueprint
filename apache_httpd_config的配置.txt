@@ -1,0 +1,30 @@
+set "MOD_WSGI_APACHE_ROOTDIR=D:\xampp\apache"
+
+
+
+httpd: Syntax error on line 185 of D:/Apache24/conf/httpd.conf: Cannot load d:/python27/lib/site-packages/mod_wsgi/server/mod_wsgiNone into server: \xd5\xd2\xb2\xbb\xb5\xbd\xd6\xb8\xb6\xa8\xb5\xc4\xc4\xa3\xbf\xe9\xa1\xa3
+
+
+
+<VirtualHost *:80>
+	DocumentRoot 你的项目路径
+	WSGIScriptAlias /(这里可以取别名，我没有取) 你的项目路径\test.wsgi
+	<Directory '你的项目路径'>
+		AllowOverride AuthConfig FileInfo
+		Require all granted
+		Order allow,deny
+		Allow from all
+	</Directory>
+</VirtualHost>
+
+
+<VirtualHost *:80>
+	DocumentRoot C:\Users\sunzhiming\Desktop\blueprint
+	WSGIScriptAlias / C:\Users\sunzhiming\Desktop\blueprint\test.wsgi
+	<Directory 'C:\Users\sunzhiming\Desktop\blueprint'>
+		AllowOverride AuthConfig FileInfo
+		Require all granted
+		Order allow,deny
+		Allow from all
+	</Directory>
+</VirtualHost>

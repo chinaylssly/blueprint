@@ -1,0 +1,32 @@
+{% extends "./base.html" %}
+{% block title %}
+{{category}}
+{% endblock %}
+
+{% block content%}
+<h3 class="well"><a href="/local">分类</a></h3>
+
+
+<div class="panel panel-default">
+
+	<div class="panel-heading">
+	
+		<div class="panel-title">
+			<h4> {{category}} </h4>
+		</div>
+	</div>
+	
+	
+	{% for book in books%}
+	<div class="panel-body">
+		<a href="{{category}}/{{book}}"> {{book}} </a>
+	</div>
+	{% endfor%}
+	
+	
+	<div class="panel-footer">
+		<a href="#" class="btn btn-default">TOP</a>
+	</div>
+
+</div>
+{% endblock %}

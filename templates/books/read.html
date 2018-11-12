@@ -1,0 +1,38 @@
+{% extends "./base.html" %}
+{% block title %}
+{{book}}
+{% endblock %}
+
+{% block content%}
+
+<a href="/path/{{path}}/{{category}}/1"><h3 >{{category}}</h3></a>
+<br>
+<div class="panel panel-default">
+
+	<div class="panel-heading">
+		<h4 class="panel-title">
+		{{book}}	
+		</h4>
+	</div>
+
+	<div class="panel-body" >
+		
+		{% for line in lines %}
+			<p style="text-align:left" >{{line}}</p>
+		{% endfor %}
+	
+	
+	</div>
+
+	<div class="panel-footer">
+		<div class="pull-center">
+				<a href="{{last_exp}}" class="btn btn-primary">上一篇：{{last_exp}}</a>
+				<a href="#" class="btn btn-default">TOP</a>
+				<a href="{{next_exp}}" class="btn btn-primary">下一篇：{{next_exp}}</a>
+		</div>
+	</div>
+
+</div>
+
+
+{% endblock %}

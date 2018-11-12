@@ -1,0 +1,40 @@
+{% extends "./base.html" %}
+{% block title %}
+{{category}}
+{% endblock %}
+
+{% block content%}
+<!-- <h3 class="well"><a href="/local">Tags</a></h3> -->
+
+
+<div class="panel panel-default">
+
+	<div class="panel-heading">
+	
+		<div class="panel-title">
+			<h4> 标签云<small>(全部标签)</small> </h4>
+		</div>
+	</div>
+	
+	
+	<div class="panel-body">
+		
+		
+		{% for keyword in keywords%}
+	
+			<div style="margin : 10px 0px 15px 5px;float:left;" >
+				<span class="label label-info" style="font-size:18px;margin-right:20px;"><a href="{{keyword}}/1"> {{keyword}} </a></span>
+			</div>
+
+		{% endfor%}
+		
+	</div>
+	
+	
+	
+	<div class="panel-footer">
+		<a href="#" class="btn btn-default">TOP</a>
+	</div>
+
+</div>
+{% endblock %}

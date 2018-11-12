@@ -1,0 +1,58 @@
+{% extends "./base.html" %}
+{% block title %}
+{{title}}
+{% endblock %}
+
+{% block content%}
+<br>
+
+<div class="well well-sm"><a href="/music"><strong>category</strong></a></div>
+<div class="panel panel-default">
+
+	<div class="panel-heading">
+		<h4 class="panel-title">
+			{{title}}
+		</h4>
+	</div>
+	<br>
+	
+
+		
+			<div class="panel-body" >
+					
+				<p>{{src[0]}}</p>
+				<audio controls="controls">
+						<source src="/music/{{src[1]}}" type="audio/mpeg">
+						Your browser does not support the audio element.
+				</audio>
+			
+			</div>
+	
+
+	<div class="panel-footer">
+	
+		<ul class="pagination" >
+
+					<li><a href="{{last_page}}">  &laquo;  </a></li>
+					<li><a href="1">  首页  </a></li>
+
+						{% for page in page_list %}
+						{% if page == current_page %}
+							<li><a style="color:red" href="{{page}}"> {{page}} </a></li>	
+						{% else %}
+							<li><a href="{{page}}"> {{page}}</a> </li>
+						{% endif %}
+						
+						{% endfor %}
+
+					<li><a href="{{pages}}">  末页  </a></li>
+					<li><a href="{{next_page}}">  &raquo;  </a></li>
+		</ul>
+	</div>
+
+</div>
+
+
+
+{% endblock %}
+

@@ -1,0 +1,47 @@
+{% extends "./base.html" %}
+{% block title %}
+{{category}}
+{% endblock %}
+
+{% block content%}
+<h3 class="well"><a href="/path/{{path}}">{{path}}</a></h3>
+
+<div class="panel panel-default">
+
+	<div class="panel-heading">
+	
+		<div class="panel-title">
+			{{category}}
+		</div>
+	</div>
+	
+	
+	{% for book in books %}
+	<div class="panel-body">
+		<a href="{{book}}"> {{book}} </a>
+	</div>
+	{% endfor%}
+	
+	
+	<div class="panel-footer">
+		<ul class="pagination" >
+
+					<li><a href="{{last_page}}">  &laquo;  </a></li>
+					<li><a href="1">  首页  </a></li>
+
+						{% for page in page_list %}
+						{% if page == current_page %}
+							<li><a style="color:red" href="{{page}}"> {{page}} </a></li>	
+						{% else %}
+							<li><a href="{{page}}"> {{page}}</a> </li>
+						{% endif %}
+						
+						{% endfor %}
+
+					<li><a href="{{pages}}">  末页  </a></li>
+					<li><a href="{{next_page}}">  &raquo;  </a></li>
+		</ul>
+	</div>
+
+</div>
+{% endblock %}

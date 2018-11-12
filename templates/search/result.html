@@ -1,0 +1,72 @@
+{% extends "./base.html" %}
+{% block title %}
+搜索结果
+{% endblock %}
+
+{% block content%}
+
+
+		<!-- <form role="form" method="post" action="/search/keyword"> -->
+		  <!-- <div class="form-group"> -->
+			
+			<!-- <input type="text" name="keyword" class="form-control" placeholder="请输入你的关键词："> -->
+			<!-- <br> -->
+			<!-- <button type="submit" class="btn btn-primary">搜索</button> -->
+		  <!-- </div> -->
+		<!-- </form> -->
+
+<div class="panel panel-default">
+	<div class="panel-heading">
+	
+		
+		
+		<div class="panel-title">
+			<h4>搜索 {{keyword}} 共获取到{{total}}条结果</h4>
+		</div>
+		
+	</div>
+	
+	
+	{% for item in jinja_list %}
+		<div class="panel-body">
+			{% if item[0]=='wanjie' %}
+			<a href="/local/{{item[1]}}/{{item[2]}}">
+			{{item[2]}}
+			</a>({{item[3]}})
+			{% else %}
+			
+			<p>
+			{{item[2]}}({{item[3]}})
+			<p>
+			{% endif %}
+		</div>
+	{% endfor %}
+	
+		
+	
+	
+	
+	<div class="panel-footer">
+		<div class="pull-center">
+
+				<ul class="pagination" style="text-align:center">
+
+				<li><a href="{{last_page}}">  &laquo;  </a></li>
+				<li><a href="1">  首页  </a></li>
+
+				{% for page in page_list %}
+				{% if page == current_page %}
+				<li><a style="color:red;" href="{{page}}">  {{page}} </a></li>
+				{%else%}
+				<li><a href="{{page}}">  {{page}}  </a></li>
+				{%endif%}
+				{%endfor%}
+
+				<li><a href="{{pages}}">  末页  </a></li>
+				<li><a href="{{next_page}}">  &raquo;  </a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="well"><a href="/search" class="btn btn-default">搜索</a></div>
+{% endblock %}

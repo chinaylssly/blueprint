@@ -1,0 +1,58 @@
+{% extends "./base.html" %}
+{% block title %}
+{{book}}
+{% endblock %}
+
+{% block content%}
+
+
+<h3 class="well"><a href="/tags">Tags</a></h3>
+
+
+<div class="panel panel-default">
+	<div class="panel-heading">
+	
+		
+		
+		<div class="panel-title">
+			<h4>{{tag}}</h4>
+		</div>
+		
+	</div>
+	
+	
+		{% for line in lines%}
+		<div class="panel-body">
+		{% if line[0]=='wanjie'%}
+			<a href="/local/{{line[1]}}/{{line[2]}}">{{line[2]}}</a>
+		{% else %}
+			<span href="/local/{{line[1]}}/{{line[2]}}/1">{{line[2]}}</span>
+		{% endif %}
+		</div>
+		{% endfor%}
+	
+	
+	
+	<div class="panel-footer">
+		<div class="pull-center">
+
+				<ul class="pagination" style="text-align:center">
+
+				<li><a href="{{last_page}}">  &laquo;  </a></li>
+				<li><a href="1">  首页  </a></li>
+
+				{% for page in page_list %}
+				{% if page == current_page %}
+				<li><a style="color:red;" href="{{page}}">  {{page}} </a></li>
+				{%else%}
+				<li><a href="{{page}}">  {{page}}  </a></li>
+				{%endif%}
+				{%endfor%}
+
+				<li><a href="{{pages}}">  末页  </a></li>
+				<li><a href="{{next_page}}">  &raquo;  </a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+{% endblock %}
